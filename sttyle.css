@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Gaya Umum */
+body {
+  margin: 0;
+  
+}
+
+
+/* Batas Awal Navigasi Bar */
+.navbar {
+  background: linear-gradient(
+    135deg,
+    #000000,
+    #000000
+  ); /* Gradient background */
+  padding: 10px 0; /* Padding atas dan bawah */
+  position: fixed; /* Posisi tetap */
+  width: 100%; /* Lebar penuh */
+  z-index: 1000; /* Menempatkan navbar di atas konten */
+}
+
+.container {
+  display: flex; /* Menggunakan Flexbox */
+  justify-content: space-between; /* Menyebar elemen */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+  max-width: 1200px; /* Lebar maksimum */
+  margin: 0 auto; /* Memusatkan kontainer */
+  padding: 0 20px; /* Padding kiri dan kanan */
+}
+
+.logo {
+  color: rgb(8, 252, 248); /* Warna logo */
+  font-size: 1.8em; /* Ukuran font untuk logo */
+  text-transform: uppercase; /* Mengubah huruf menjadi kapital semua */
+}
+
+.nav-list {
+  list-style: none; /* Menghilangkan bullet point */
+  display: flex; /* Menggunakan Flexbox */
+  margin: 0; /* Menghilangkan margin */
+  padding: 0; /* Menghilangkan padding */
+}
+
+.nav-list li {
+  margin-left: 20px; /* Jarak antara item */
+}
+
+.nav-list a {
+  color: rgb(8, 252, 248); /* Warna teks */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  padding: 10px 15px; /* Padding dalam link */
+  border-radius: 5px; /* Sudut membulat */
+  transition: background-color 0.5s; /* Transisi untuk perubahan warna */
+}
+
+
+/* Mengubah warna saat hover */
+.nav-list a:hover {
+  background-color: rgb(255, 255, 255); /* Warna saat hover */
+  color: #000000;
+}
+/* Batas Akhir Navigasi Bar */
+
+
+/* Batas Awal Hamburger Menu */
+.menu-toggle {
+  display: none; /* Sembunyikan untuk layar besar */
+  flex-direction: column; /* Menumpuk bar */
+  cursor: pointer; /* Menunjukkan bahwa ini dapat diklik */
+}
+
+.bar {
+  height: 3px; /* Tinggi bar */
+  width: 25px; /* Lebar bar */
+  background-color: rgb(8, 252, 248); /* Warna bar */
+  margin: 3px 0; /* Jarak antar bar */
+}
+
+
+/* Media Query untuk Responsif */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Sembunyikan menu untuk layar kecil */
+    flex-direction: column; /* Menumpuk item */
+    position: absolute; /* Posisi absolut untuk menu */
+    top: 80px; /* Jarak dari atas */
+    left: 0; /* Menempel ke kiri */
+    background: linear-gradient(
+      135deg,
+      #18181878,
+      #f0f0f077
+    ); /* Gradient
+    background */
+    width: 100%; /* Lebar penuh */
+  }
+
+  .nav-list.active {
+    display: flex; /* Tampilkan menu saat aktif */
+  }
+
+  .menu-toggle {
+    display: flex; /* Tampilkan menu hamburger */
+  }
+
+  .navbar {
+    padding: 10px 0; /* Padding navbar lebih kecil untuk layar kecil */
+  }
+
+  .nav-list a {
+    padding: 0px; /* Padding yang lebih besar untuk item menu */
+    text-align: center; /* Memusatkan teks dalam item */
+  }
+}
+/* Batas Akhir Hamburger Menu */
+
+
+/* Batas Awal Hero */
+.hero {
+  background-image: url(WP\ Personal\ Web.jpg); /* Gambar latar belakang */
+  background-size: cover; /* Menutupi seluruh area */
+  background-position: center; /* Pusat gambar */
+  height: 110vh; /* Tinggi penuh viewport */
+  display: flex; /* Menggunakan Flexbox */
+  flex-direction: column; /* Mengatur arah konten */
+  justify-content: center; /* Memusatkan konten secara vertikal */
+  align-items: center; /* Memusatkan konten secara horizontal */
+  color: rgb(255, 255, 255); /* Warna teks */
+  text-align:center; /* Memusatkan teks */
+  position: relative; /* Posisi relatif untuk elemen overlay */
+  overflow: hidden; /* Menyembunyikan bagian yang berlebihan */
+}
+
+
+/* Overlay untuk efek gelap */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+/* Gaya untuk Judul */
+.hero h1 {
+  font-size: 3em; /* Ukuran font untuk judul */
+  margin: 0; /* Menghilangkan margin */
+  animation: fadeInDown 2s; /* Animasi saat muncul */
+}
+
+
+/* Gaya untuk Subjudul */
+.hero h2 {
+  font-size: 1.5em; /* Ukuran font untuk subjudul */
+  margin: 10px 0; /* Jarak atas dan bawah */
+  animation: fadeInUp 2s; /* Animasi saat muncul */
+}
+
+
+/* Gaya untuk Tombol */
+.hero button {
+  padding: 10px 20px; /* Padding dalam tombol */
+  font-size: 1em; /* Ukuran font */
+  background-color: #1eff00; /* Warna latar belakang tombol */
+  color: white; /* Warna teks */
+  border: none; /* Tanpa batas */
+  border-radius: 5px; /* Sudut membulat */
+  cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
+  transition: background-color 0.3s; /* Transisi untuk perubahan warna */
+}
+
+
+/* Mengubah warna tombol saat hover */
+.hero button:hover {
+  background-color: #2d14e9; /* Warna tombol saat hover */
+}
+
+
+/* Animasi untuk judul dan subjudul */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Batas Akhir Hero */
+
+
+/* Batas Awal Highlights */
+.highlights {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #5b5252d0;
+  color: #0ae2f1;
+}
+
+.highlights h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.highlight-content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+}
+
+.highlight-card {
+  padding: 20px;
+  background-color: rgb(36, 208, 168);
+  border-radius: 10px;
+  box-shadow: 0 9px 12px rgb(0, 0, 0);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgb(3, 217, 250);
+}
+
+.highlight-card i {
+  font-size: 2.5rem;
+  color: #003cff;
+  margin-bottom: 15px;
+}
+
+.highlight-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #000000;
+}
+
+.highlight-card p {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+
+/* Media Query untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .highlight-content {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-card {
+    width: 100%;
+  }
+}
+/* Batas Akhir Highlights */
+
+
+/* Batas Awal Footer */
+footer {
+  background: linear-gradient(135deg,#000000,
+  #000000); /* Gradient background */
+  color: rgb(255, 255, 255);
+  padding: 2rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .footer-content p {
+    margin-bottom: 10px;
+    }
+
+    .social-links a {
+      color: rgb(1, 244, 253);
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: rgb(255, 255, 255);
+    }
+
+      footer {
+        padding: 1rem;
+        background-color: var(--pink);
+        color: rgb(3, 244, 253);
+      }
+      
+      footer a {
+        color: var(--bg);
+        font-weight: bold;
+        text-decoration: none;
+      }
+/* Batas Akhir Footer */
+
+
+/* Batas Awal Portfolio */
+.portfolio {
+  padding: 130px 200px; /* Padding untuk bagian portfolio */
+  text-align: center; /* Memusatkan teks */
+  background-color: #5b5252d0;
+  color: #000000;
+}
+.portfolio-item {
+  margin: 20px; /* Jarak antara item portfolio */
+  padding: 20px; /* Padding dalam item */
+  border: 1px solid #000000; /* Batas */
+  background-color: #0ae2f1;
+  border-radius: 5px; /* Sudut membulat */
+}
+/* Batas Akhir Portfolio */
+
+
+/* Batas Awal Gallery */
+.gallery {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #5b5252d0;
+  }
+
+.gallery h2 {
+  font-size: 2rem;
+  color: #00eeff;
+  margin-bottom: 30px;
+  }
+  
+.gallery-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px rgb(0, 255, 251);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    }
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgb(255, 255, 255);
+    }
+/* Batas Akhir Gallery */
+
+
+/* Batas Awal About */
+.about {
+  padding: 130px 20px;
+  text-align: center;
+  background-color: #5b5252d0;
+  color: #000000;
+  }
+
+.about-content {
+  display: flex;
+  flex-direction: column; /* Stack konten di atas gambar secara default */
+  justify-content: center;
+  align-items: center; /* Memusatkan konten secara horizontal */
+  }
+
+.about-photo img {
+  width: 150px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px; /* Jarak antara foto dan biodata */
+  }
+
+.about-bio {
+  max-width: 600px;
+  text-align: center; /* Memusatkan teks biodata */
+  color: white;
+  }
+
+.about-bio h3 {
+  margin: 10px 0;
+  color: #00eeff;
+  }
+
+.about-bio h4 {
+  margin-top: 20px;
+  color: #00eeff;
+  }
+
+/* Skills Section */
+.skills {
+  margin-top: 20px;
+  }
+
+.skill {
+  margin-bottom: 20px;
+  }
+
+.skill p {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  }
+
+.skill-bar {
+  background-color: #ddd;
+  height: 10px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  }
+
+.skill-level {
+  height: 100%;
+  border-radius: 5px;
+  }
+
+.skill-level.pemrogramman {
+    width: 90%;
+    background-color: #007bff;
+    animation: skill-animation 2s ease-out;
+    }
+
+.skill-level.microsoft {
+    width: 80%;
+    background-color: #f39c12;
+    animation: skill-animation 2s ease-out;
+    }
+
+.skill-level.home.design {
+    width: 75%;
+    background-color: #61dafb;
+    animation: skill-animation 2s ease-out;
+    }
+
+
+/* Animasi untuk Progress Bar */
+    @keyframes skill-animation {
+    from {
+    width: 0;
+    }
+    to {
+    width: inherit;
+    }
+    }
+
+/* Media Query untuk Responsif */
+    @media (min-width: 768px) {
+    .about-content {
+    flex-direction: row; /* Tampilan side-by-side pada layar besar */
+    align-items: center; /* Memusatkan konten secara vertikal */
+    }
+    .about-photo img {
+    margin-bottom: 0;
+    margin-right: 20px; /* Tambahkan jarak antara gambar dan teks pada layar besar */
+    }
+    .about-bio {
+    text-align: left; /* Teks rata kiri pada layar besar */
+    }
+    }
+/* Batas Akhir About */
+
+
+/* Batas Awal Achievment */
+.news-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 100px;
+  background-color: #5b5252d0;
+  }
+
+.news-item {
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(1, 242, 250, 0.977);
+  text-align: center;
+  }
+
+.news-item img {
+  max-width: 500px;
+  width: 500px;
+  height: auto;
+  margin-bottom: 30px;
+  }
+
+.news-section p {
+  color: #00eeff;
+}
+.news-item h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #00eeff;
+      
+      }
+
+.news-item p {
+      font-size: 1rem;
+      color: #000000;
+      }
+/* Batas Akhir Achievment */
+
+
+/* Batas Awal Info */
+.info {
+  background-color: #5b5252d0;
+  color: rgb(255, 255, 255);
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+.info h2 {
+  color: #000000;
+}
+
+.info .alamat {
+  font-size: 1.1rem;
+}
+
+.info .description {
+  font-size: 1rem;
+  font-weight: 400;
+}
+/* Batas Akhir Info */
